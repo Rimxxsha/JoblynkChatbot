@@ -1,0 +1,102 @@
+🤖 Joblynk Chatbot
+AI-Powered Multi-Modal Customer Support Assistant
+📌 Overview
+
+Joblynk Chatbot is an AI-powered customer support assistant designed to deliver intelligent, real-time, multi-modal support.
+It combines Retrieval-Augmented Generation (RAG), image understanding, video recommendations, and email transcript delivery into a single, seamless chatbot experience.
+
+The system is built for scalable customer support, enabling users to ask questions via text or images, receive context-aware answers, and get relevant tutorial videos — all through a live WebSocket-based chat interface.
+
+🚀 Key Features
+💬 Intelligent Text-Based Q&A
+
+Uses RAG (Retrieval Augmented Generation)
+
+FAISS-powered vector similarity search
+
+Accurate, knowledge-grounded responses
+
+Context retention across the session
+
+🖼️ Image Processing & OCR
+
+Accepts image uploads directly in chat
+
+Uses Groq Vision API for OCR & visual analysis
+
+Extracted text is combined with user queries
+
+Supports text + image multi-modal queries
+
+🎥 Smart Video Recommendations
+
+Context-aware tutorial matching
+
+JSON-based video knowledge store
+
+Relevant videos suggested automatically
+
+In-chat video modal playback
+
+📧 Email Transcript Delivery
+
+Optional email collection
+
+Full chat transcript sent via SendGrid
+
+Useful for follow-ups, documentation, and audits
+
+🔄 Real-Time Communication
+
+WebSocket-based live chat
+
+Instant responses without page reloads
+
+Persistent session-based chat history
+
+🌐 Multi-Modal Support
+
+Text-only queries
+
+Image-only queries
+
+🧠 System Architecture
+
+┌─────────────────┐    WebSocket     ┌──────────────────┐    API Calls    ┌─────────────────┐
+│   Frontend      │ ◄─────────────► │   server.py      │ ◄─────────────► │   chatbot.py    │
+│   (HTML/JS/CSS) │                 │   (WebSocket)    │                 │   (Core Logic)  │
+└─────────────────┘                 └──────────────────┘                 └─────────────────┘
+                                             │                                      │
+                                             │                                      ▼
+                                             ▼                             ┌─────────────────┐
+                                    ┌─────────────────┐                   │  External APIs  │
+                                    │  Chat History   │                   │  • Groq LLM     │
+                                    │  Management     │                   │  • Groq Vision  │
+                                    └─────────────────┘                   │  • SendGrid     │
+                                                                            └─────────────────┘
+                                                                                     │
+                                                                                     ▼
+                                                                            ┌─────────────────┐
+                                                                            │ Knowledge Base  │
+                                                                            │ • FAISS Index   │
+                                                                            │ • Text Chunks   │
+                                                                            │ • videos.json   │
+                                                                            └─────────────────┘
+
+🛠️ Tech Stack
+Frontend
+--HTML5
+--CSS3
+--JavaScript (Vanilla)
+--WebSockets
+
+Backend
+--Python 3.8+
+--WebSocket Server
+--FAISS (Vector Search)
+
+AI & APIs
+--Groq LLM (Text generation)
+--Groq Vision API (OCR & image understanding)
+--SendGrid (Email delivery)
+--Serper API (Optional web search)
